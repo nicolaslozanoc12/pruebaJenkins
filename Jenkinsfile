@@ -63,7 +63,7 @@ pipeline {
 
     post {
         failure {
-            echo " Error en el pipeline. Revisa los logs para mas detalles. aaaa"
+            echo " Error en el pipeline. Revisa los logs para mas detalles. aaacambioa"
         }
         success {
             echo "Pipeline ejecutado correctamente. Cambios desplegados a Azure."
