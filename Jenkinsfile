@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Clonar Repositorio') {
             steps {
-                git branch: 'main', url: 'https://github.com/jukhg10/EduNotasBack.git'
+                git branch: 'main', url: 'https://github.com/nicolaslozanoc12/pruebaJenkins.git'
             }
         }
 
@@ -35,7 +35,7 @@ pipeline {
 
         stage('Desplegar a Azure') {
             steps {
-                withCredentials([azureServicePrincipal('69d08a15-2f2d-49ca-9e35-b217bb07aa34')]) {
+                withCredentials([azureServicePrincipal('1bc485ee-f460-4933-ac7a-975d97c639e3')]) {
                     sh '''
                         echo "Iniciando sesin en Azure..."
                         az login --service-principal -u $AZURE_CREDENTIALS_USR -p $AZURE_CREDENTIALS_PSW --tenant $TENANT_ID > /dev/null
