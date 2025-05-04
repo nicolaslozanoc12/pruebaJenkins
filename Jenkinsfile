@@ -39,7 +39,7 @@ pipeline {
               --src app.zip \
               --output none
 
-            echo "✔ Deployment successful."
+            echo " Deployment successful."
           '''
         }
       }
@@ -47,7 +47,7 @@ pipeline {
   }
 
   post {
-    success { echo '✅ Pipeline succeeded!' }
-    failure { echo '❌ Pipeline failed; check logs.' }
+    success { echo ' Pipeline succeeded!' }
+    failure { echo ' Pipeline failed; check logs.' }
   }
 }
