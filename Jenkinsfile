@@ -18,7 +18,7 @@ pipeline {
 
     stage('Deploy to Azure') {
       steps {
-        withCredentials([azureServicePrincipal('1bc485ee‑f460‑4933‑ac7a‑975d97c639e3')]) {
+        withCredentials([azureServicePrincipal('c221e91e-2364-4f0a-92a1-700af85b1ad')]) {
           sh '''
             echo "Logging in to Azure..."
             az login --service-principal \
