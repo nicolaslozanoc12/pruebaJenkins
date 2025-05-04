@@ -35,7 +35,7 @@ pipeline {
 
         stage('Desplegar a Azure') {
             steps {
-                withCredentials([azureServicePrincipal('f3ad5604-b0fe-4837-85ba-11679152e9c5')]) {
+                withCredentials([azureServicePrincipal('9dca64a2-8ca0-4492-b92f-120bd7319f59')]) {
                     sh '''
                         echo "Iniciando sesion en Azure..."
                         az login --service-principal -u $AZURE_CREDENTIALS_USR -p $AZURE_CREDENTIALS_PSW --tenant $TENANT_ID > /dev/null
