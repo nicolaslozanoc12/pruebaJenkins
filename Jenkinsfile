@@ -47,7 +47,7 @@ pipeline {
   }
 
   post {
-    success { echo ' Pipeline succeeded asfdasfsaf!' }
+    success { echo ' Pipeline succeeded git actualizado!' }
     failure { echo ' Pipeline failed; check logs.' }
   }
 }
