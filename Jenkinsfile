@@ -37,24 +37,27 @@ pipeline {
             steps {
                 withCredentials([azureServicePrincipal('9dca64a2-8ca0-4492-b92f-120bd7319f59')]) {
                     sh '''
-                        echo "Iniciando sesion en Azure..."
-                        az login --service-principal -u $AZURE_CREDENTIALS_USR -p $AZURE_CREDENTIALS_PSW --tenant $TENANT_ID > /dev/null
+                         echo "Iniciando sesión en Azure..."
+                            az login --service-principal \
+                                --username $AZURE_CLIENT_ID \
+                                --password $AZURE_CLIENT_SECRET \
+                                --tenant $AZURE_TENANT_ID > /dev/null
 
-                        echo "Seleccionando suscripcion..."
-                        az account set --subscription $SUBSCRIPTION_ID
+                            echo "Seleccionando suscripción..."
+                            az account set --subscription $AZURE_SUBSCRIPTION_ID
 
-                        echo "Comprimiendo archivos para despliegue..."
-                        cd publish
-                        zip -r ../app.zip .
-                        cd ..
+                            echo "Comprimiendo archivos para despliegue..."
+                            cd publish
+                            zip -r ../app.zip .
+                            cd ..
 
-                        echo "Desplegando a Azure Web App..."
-                        az webapp deployment source config-zip \
-                          --resource-group $RESOURCE_GROUP \
-                          --name $APP_NAME \
-                          --src app.zip
+                            echo "Desplegando a Azure Web App..."
+                            az webapp deployment source config-zip \
+                                --resource-group $RESOURCE_GROUP \
+                                --name $APP_NAME \
+                                --src app.zip
 
-                        echo "Despliegue completado exitosamente."
+                            echo "Despliegue completado exitosamente."
                     '''
                 }
             }
