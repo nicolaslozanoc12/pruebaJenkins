@@ -35,7 +35,7 @@ pipeline {
 
         stage('Desplegar a Azure') {
             steps {
-                withCredentials([azureServicePrincipal('9dca64a2-8ca0-4492-b92f-120bd7319f59')]) {
+                withCredentials([azureServicePrincipal('1bc485ee-f460-4933-ac7a-975d97c639e3')]) {
                     sh '''
                          echo "Iniciando sesión en Azure..."
                             az login --service-principal \
