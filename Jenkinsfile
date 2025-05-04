@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Clonar Repositorio') {
             steps {
-                git branch: 'main', url: 'https://github.com/jukhg10/EduNotasBack.git'
+                git branch: 'main', url: 'https://github.com/nicolaslozanoc12/pruebaJenkins.git'
             }
         }
 
