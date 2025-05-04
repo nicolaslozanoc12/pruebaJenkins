@@ -47,7 +47,7 @@ pipeline {
   }
 
   post {
-    success { echo ' Pipeline succeeded cambiosasfdwae!' }
+    success { echo ' Pipeline succeeded cambiSADASDASDosasfdwae!' }
     failure { echo ' Pipeline failed; check logs.' }
   }
 }
